@@ -1,0 +1,16 @@
+<aspectj>
+    <aspects>
+
+        <aspect name="pack.newbie.AroundLogAspect"/>
+        <weaver options="-verbose -showWeaveInfo">
+            <include within="pack.newbie.Hello"/>
+            <include within="pack.newbie.*"/>
+        </weaver>
+
+        <aspect name="pack.newbie.CatchAndLogAspect"/>
+        <weaver options="-verbose -showWeaveInfo">
+            <include within="pack.newbie.Hello"/>
+            <include within="pack.newbie.*"/>
+        </weaver>
+    </aspects>
+</aspectj>
