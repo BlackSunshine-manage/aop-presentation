@@ -19,17 +19,16 @@ public class CatchAndLogAspect {
         log.error(catchAndLog.baseMessage(), exception.getMessage());
         exception.printStackTrace();
     }
-//    /**
-//     * TODO: Раскомментировать здесь для получения стэктрейса ошибок при подключении аспектов.
-//     */
-//    @Around(value = "throwing(catchAndLog)")
-//    public void executeSuppressException(ProceedingJoinPoint pjp, CatchAndLog catchAndLog) throws Throwable{
-//        Object val =null;
-//        try{ /* TODO: Перенос на новую строчку вставлял сюда, дабы удостовериться что в стектрейсе именно сюда ссылается 3 строчка, а не в класс Hello */
-//            val = pjp.proceed();
-//        }catch (Throwable throwable){ }
-//    }
-
+    /**
+     * TODO: Раскомментировать здесь для получения стэктрейса ошибок при подключении аспектов.
+     */
+    @Around(value = "throwing(catchAndLog)")
+    public void executeSuppressException(ProceedingJoinPoint pjp, CatchAndLog catchAndLog) throws Throwable{
+        Object val =null;
+        try{ /* TODO: Перенос на новую строчку вставлял сюда, дабы удостовериться что в стектрейсе именно сюда ссылается 3 строчка, а не в класс Hello */
+            val = pjp.proceed();
+        }catch (Throwable throwable){ }
+    }
 
 //    @Aspect
 //    public static class CompositionAroundLogAndCatchAndLogAspect {
